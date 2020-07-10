@@ -1,0 +1,19 @@
+{
+    "name": "HexUN.Grid",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:e6cf7a9d4b86ecd45b8095fc035e5353",
+        "GUID:cc6b14f4bda26d34d992575924cac6bb",
+        "GUID:f5eab7ae485a28e4f9fdd568c21c4a83",
+        "GUID:b7d7c9b98c34b5246b240feca75ec8ca"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
