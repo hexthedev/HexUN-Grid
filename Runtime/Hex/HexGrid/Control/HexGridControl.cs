@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TobiasCSStandard.Core;
-using TobiasCSStandard.Games;
+using HexCS.Core;
+using HexCS.Games;
 using HexUN.Events;
-using HexUN.Math;
 using HexUN.MonoB;
 using UnityEngine;
-using Event = TobiasCSStandard.Core.Event;
+using Event = HexCS.Core.Event;
 
 namespace HexUN.Grid
 {

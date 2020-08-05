@@ -1,6 +1,6 @@
 ﻿using System;
-using TobiasCSStandard.Core;
-using TobiasCSStandard.Games;
+using HexCS.Core;
+using HexCS.Games;
 using UnityEngine;
 
 namespace HexUN.Grid

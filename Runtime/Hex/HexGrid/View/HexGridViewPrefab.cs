@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TobiasCSStandard.Core;
-using TobiasCSStandard.Games;
+using HexCS.Core;
+using HexCS.Games;
 using HexUN.Deps;
 using HexUN.MonoB;
 using UnityEngine;
-using Vec2 = TobiasCSStandard.Core.Vector2;
+using Vec2 = HexCS.Core.Vector2;
 
 namespace HexUN.Grid
 {

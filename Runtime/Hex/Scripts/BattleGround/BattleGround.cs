@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using TobiasCSStandard.Core;
-using TobiasCSStandard.Games;
+using HexCS.Core;
+using HexCS.Games;
 using HexUN.Utilities;
 using HexUN.CSStandard;
 using UnityEngine;

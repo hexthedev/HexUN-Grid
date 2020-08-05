@@ -1,5 +1,5 @@
-﻿using TobiasCSStandard.Core;
-using TobiasCSStandard.Games;
+﻿using HexCS.Core;
+using HexCS.Games;
 
 namespace HexUN.Grid
 {

@@ -1,4 +1,4 @@
-﻿using TobiasCSStandard.Games;
+﻿using HexCS.Games;
 using HexUN.Utilities;
 using HexUN.CSStandard;
 using UnityEngine;
