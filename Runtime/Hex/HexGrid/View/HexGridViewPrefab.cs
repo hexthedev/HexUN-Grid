@@ -28,17 +28,17 @@ namespace HexUN.Grid
 
         private IHexGridProvider _hexGridProvider;
         private GameObject _gridParent;
-        private Dictionary<SHexCoordinate, IHexControl> _map = new Dictionary<SHexCoordinate, IHexControl>();
+        //private Dictionary<SHexCoordinate, IHexControl> _map = new Dictionary<SHexCoordinate, IHexControl>();
 
         protected override void OnValidate()
         {
             base.OnValidate();
 
-            if (_prefab.GetComponent<IHexControl>() == null)
-            {
-                Debug.LogError($"Provided hex prefab does not have IHexControl component");
-                _prefab = null;
-            }
+            //if (_prefab.GetComponent<IHexControl>() == null)
+            //{
+            //    Debug.LogError($"Provided hex prefab does not have IHexControl component");
+            //    _prefab = null;
+            //}
         }
 
         protected override void ResolveDependencies()
@@ -59,15 +59,15 @@ namespace HexUN.Grid
             if (_gridParent != null) HandleDestroy();
             _gridParent = new GameObject("Grid");
             _gridParent.transform.SetParent(transform);
-            _map.Clear();
+            //_map.Clear();
 
             foreach(SHexCoordinate coord in coords)
             {
                 GameObject cellInstance = Instantiate(_prefab, GetPosition(coord), Quaternion.identity, _gridParent.transform);
                 cellInstance.transform.localScale *= _converter.HexScaleFactor;
-                IHexControl cellControl = cellInstance.GetComponent<IHexControl>();
-                _hexGridProvider.RegisterHexClick(coord, cellControl.OnClick);
-                _map[coord] = cellControl;
+                //IHexControl cellControl = cellInstance.GetComponent<IHexControl>();
+                //_hexGridProvider.RegisterHexClick(coord, cellControl.OnClick);
+                //_map[coord] = cellControl;
             }
         }
 
@@ -78,8 +78,8 @@ namespace HexUN.Grid
 
         public void HandleHexState(SHexStateArgs args)
         {
-            if (!_map.TryGetValue(args.Coordinate, out IHexControl control)) Debug.LogError($"Failed to find hex {args.Coordinate} when setting hex state");
-            control.HexState = args.State;
+            //if (!_map.TryGetValue(args.Coordinate, out IHexControl control)) Debug.LogError($"Failed to find hex {args.Coordinate} when setting hex state");
+            //control.HexState = args.State;
         }
 
         public void HandleEuclidianPositionRequest(SEuclidianPositionArgs args)

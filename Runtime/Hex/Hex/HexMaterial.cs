@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HexUN.Design;
-using HexUN.Systems.Grid;
+﻿using HexUN.Design;
 using HexUN.Input;
 using UnityEngine;
 
 namespace HexUN.Grid
 {
-    public class HexViewMaterial : AHexView
+    public class HexMaterial : AHex
     {
         [Header("Dependencies (HexViewMaterial)")]
         [SerializeField]
@@ -34,28 +31,13 @@ namespace HexUN.Grid
         [SerializeField]
         private GameColor _highlightedColor = default;
 
-        private bool _isChangedSinceLastFrame = false;
+        [SerializeField]
+        private EHoverableEvent _lastHoverEvent;
 
+        #region Protected API
         protected override void MonoAwake() {
+            base.MonoAwake();
             ResolveGameColoReferences();
-        }
-        
-        protected override void HandleHexState(EHexState state)
-        {
-            _hexState = state;
-            _isChangedSinceLastFrame = true;
-        }
-
-        protected override void HandleHoverableEvent(EHoverableEvent hover)
-        {
-            _lastHoverEvent = hover;
-            _isChangedSinceLastFrame = true;
-        }
-
-        protected override void HandleInteractionState(bool interactionState)
-        {
-            _isInteractable = interactionState;
-            _isChangedSinceLastFrame = true;
         }
 
         protected override void OnValidate()
@@ -65,14 +47,19 @@ namespace HexUN.Grid
             ResolveMaterials();
         }
 
-        private void Update()
+        protected override void HandleFrameRender()
         {
-            if (_isChangedSinceLastFrame)
-            {
-                ResolveMaterials();
-                _isChangedSinceLastFrame = false;
-            }
+            ResolveMaterials();
         }
+        #endregion
+
+        #region Public API
+        public void HandleHoverableEvent(EHoverableEvent hover)
+        {
+            _lastHoverEvent = hover;
+            Render();
+        }
+        #endregion
 
         private void ResolveGameColoReferences()
         {
@@ -82,12 +69,12 @@ namespace HexUN.Grid
 
         private void ResolveMaterials()
         {
-           _renderer.material = ResolveScheme(_hexState == EHexState.Neutral ? _neutralColor : _highlightedColor);
+           _renderer.material = ResolveScheme(HexState == EHexState.Neutral ? _neutralColor : _highlightedColor);
         }
 
         private Material ResolveScheme(GameColor color)
         {
-            if (!_isInteractable)
+            if (!Interactable)
             {
                 return color.GreyedMaterial;
             }

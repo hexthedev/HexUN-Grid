@@ -1,0 +1,25 @@
+{
+  "Tokens": [
+    {
+      "Path": "Dependencies/HexUN-Grid/Runtime/Hex/_events/EHexState.event",
+      "Type": "EHexState",
+      "Namespace": "HexUN.Grid",
+      "MenuPath": "HexUN/Grid/Events",
+      "EventTypeNamespace": "HexUN.Grid"
+    },
+    {
+      "Path": "Dependencies/HexUN-Grid/Runtime/Hex/_events/SHexCoordinate.event",
+      "Type": "SHexCoordinate",
+      "Namespace": "HexUN.Grid",
+      "MenuPath": "HexUN/Grid/Events",
+      "EventTypeNamespace": "HexUN.Grid"
+    },
+    {
+      "Path": "Dependencies/HexUN-Grid/Runtime/Hex/_events/SHexStateArgs.event",
+      "Type": "SHexStateArgs",
+      "Namespace": "HexUN.Grid",
+      "MenuPath": "HexUN/Grid/Events",
+      "EventTypeNamespace": "HexUN.Grid"
+    }
+  ]
+}   
