@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using HexCS.Games;
+
 using UnityEngine;
 
 namespace HexUN.Grid

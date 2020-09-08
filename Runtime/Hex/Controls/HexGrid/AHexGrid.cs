@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using HexCS.Core;
-using HexCS.Games;
+
 using HexUN.Events;
+using HexUN.Facade;
 using HexUN.MonoB;
 using UnityEngine;
 using Event = HexCS.Core.Event;
@@ -13,21 +14,8 @@ namespace HexUN.Grid
     /// <summary>
     /// Control for a full hex grid
     /// </summary>
-    public class HexGridControl : MonoEnhanced, IHexGridControl
+    public abstract class AHexGrid : AVisualFacade
     {
-        [Header("Emissions (HexGridControl)")]
-        [SerializeField]
-        private SHexCoordinateReliableEvent _onHexClicked = new SHexCoordinateReliableEvent();
-
-        [SerializeField]
-        private SHexCoordinateArrayReliableEvent _onGenerate = new SHexCoordinateArrayReliableEvent();
-
-        [SerializeField]
-        private VoidReliableEvent _onDestroyGrid = new VoidReliableEvent();
-
-        [SerializeField]
-        private SHexStateArgsReliableEvent _onHexState = new SHexStateArgsReliableEvent();
-
         [Header("Debugging (HexGridControl)")]
         [SerializeField]
         private bool _isGenerated = default;
@@ -55,20 +43,6 @@ namespace HexUN.Grid
         #region API
         /// <inheritdoc />
         public bool IsGenerated => _isGenerated;
-
-        /// <inheritdoc />
-        public IEventSubscriber<SHexCoordinate> OnHexClicked => _onHexClicked;
-
-        /// <inheritdoc />
-        public IEventSubscriber<SHexCoordinate[]> OnGenerate => _onGenerate;
-
-        /// <inheritdoc />
-        public IEventSubscriber OnDestroyGrid => _onDestroyGrid;
-
-        /// <inheritdoc />
-        public IEventSubscriber<SHexStateArgs> OnHexState => _onHexState;
-
-        public IEventSubscriber<SEuclidianPositionArgs> OnEuclidianPositionRequest => _onEuclidianPostionRequest;
 
         /// <inheritdoc />
         public void GenerateGrid(SHexCoordinate[] allHexes)
@@ -244,6 +218,8 @@ namespace HexUN.Grid
         {
             SetAllStates(_BothHexSetState);
         }
+
+        protected override void HandleFrameRender() => throw new NotImplementedException();
 #endif
         #endregion
     }

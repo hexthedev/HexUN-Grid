@@ -52,6 +52,14 @@ MonoBehaviour:
     _unityEvent:
       m_PersistentCalls:
         m_Calls: []
+  _onInteractionState:
+    _unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  _onClick:
+    _unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
   _state: 0
   _renderer: {fileID: 3956186436013330941}
   _colorScheme: {fileID: 11400000, guid: 804e1036cb1f3ae47925a19fad83f581, type: 2}

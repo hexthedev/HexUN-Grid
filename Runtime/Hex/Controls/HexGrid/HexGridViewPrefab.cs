@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using HexCS.Core;
-using HexCS.Games;
+
 using HexUN.Deps;
 using HexUN.MonoB;
 using UnityEngine;
@@ -12,7 +12,7 @@ namespace HexUN.Grid
     /// <summary>
     /// Controls the visual output of a hex gridw
     /// </summary>
-    public class HexGridViewPrefab : MonoDependent
+    public class HexGridPrefab : AHexGrid
     {
         [Header("Dependencies (HexGridViewPrefab)")]
         [SerializeField]
@@ -26,7 +26,6 @@ namespace HexUN.Grid
         [SerializeField]
         private GameObject _prefab = null;
 
-        private IHexGridProvider _hexGridProvider;
         private GameObject _gridParent;
         //private Dictionary<SHexCoordinate, IHexControl> _map = new Dictionary<SHexCoordinate, IHexControl>();
 
@@ -39,19 +38,6 @@ namespace HexUN.Grid
             //    Debug.LogError($"Provided hex prefab does not have IHexControl component");
             //    _prefab = null;
             //}
-        }
-
-        protected override void ResolveDependencies()
-        {
-            UTDependency.Resolve(ref _hexGridProviderPrefab, out _hexGridProvider, this);
-        }
-
-        protected override void ResolveEventBindings(EventBindingGroup ebs)
-        {
-            ebs.Add(_hexGridProvider.OnGenerate.Subscribe(HandleGenerate));
-            ebs.Add(_hexGridProvider.OnDestroyGrid.Subscribe(HandleDestroy));
-            ebs.Add(_hexGridProvider.OnHexState.Subscribe(HandleHexState));
-            ebs.Add(_hexGridProvider.OnEuclidianPositionRequest.Subscribe(HandleEuclidianPositionRequest));
         }
 
         private void HandleGenerate(SHexCoordinate[] coords)
