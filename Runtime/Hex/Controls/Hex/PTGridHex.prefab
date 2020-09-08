@@ -240,6 +240,36 @@ PrefabInstance:
       propertyPath: HoverableEvent._unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4633027530849495660}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172498959989091536, guid: 046d8ce65fd0c76499da06a07c688e1c,
+        type: 3}
+      propertyPath: OnClick._soEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8820250916374960546, guid: 046d8ce65fd0c76499da06a07c688e1c,
         type: 3}
       propertyPath: m_LocalPosition.x
