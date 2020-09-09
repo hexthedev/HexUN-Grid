@@ -42,6 +42,7 @@ namespace HexUN.Grid
                 AHex cellInstance = Instantiate(_prefab, GetPosition(coord), Quaternion.identity, transform);
                 cellInstance.AddData(coord);
                 cellInstance.transform.localScale *= _converter.HexScaleFactor;
+                map[coord] = cellInstance;
             }
         }
 

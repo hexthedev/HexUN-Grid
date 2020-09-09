@@ -17,6 +17,10 @@ namespace HexUN.Grid
 
         [Header("Options (HexViewMaterial)")]
         [SerializeField]
+        [Tooltip("The base transform of the hex")]
+        private Transform _baseTransform;
+
+        [SerializeField]
         [Tooltip("Scheme when hex is neutral")]
         private ESchemeColor _neutralScheme = ESchemeColor.Primary;
 
@@ -54,6 +58,9 @@ namespace HexUN.Grid
         #endregion
 
         #region Public API
+        /// <inheritdoc/>
+        public override Transform GetBaseTransform() => _baseTransform;
+
         public void HandleHoverableEvent(EHoverableEvent hover)
         {
             _lastHoverEvent = hover;

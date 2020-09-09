@@ -32,6 +32,9 @@ namespace HexUN.Grid
         private EHexState _state = EHexState.Neutral;
 
         #region API
+        /// <summary>
+        /// Is this hex interactable
+        /// </summary>
         public bool Interactable
         {
             get => _interactable;
@@ -44,7 +47,9 @@ namespace HexUN.Grid
             }
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// What is the current state of the hex
+        /// </summary>
         public EHexState HexState
         {
             get => _state;
@@ -56,6 +61,11 @@ namespace HexUN.Grid
                 Render();
             }
         }
+
+        /// <summary>
+        /// Provides the transform of the central position that sits on top of the hex
+        /// </summary>
+        public abstract Transform GetBaseTransform();
 
         public void HandleClick()
         {
