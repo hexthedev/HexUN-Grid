@@ -88,7 +88,7 @@ namespace HexUN.Grid
         }
 
         /// <summary>
-        /// Returns all coordinates radial to the coordinate based on radius
+        /// Returns all coordinates radial to the coordinate based on radius, including the original coordinate
         /// </summary>
         /// <param name="radius"></param>
         /// <returns></returns>

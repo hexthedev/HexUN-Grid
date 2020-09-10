@@ -5,7 +5,7 @@ using HexCS.Core;
 using HexUN.Deps;
 using HexUN.MonoB;
 using UnityEngine;
-using Vec2 = HexCS.Core.Vector2;
+using Vector2 = UnityEngine.Vector2;
 
 namespace HexUN.Grid
 {
@@ -29,8 +29,8 @@ namespace HexUN.Grid
         /// <returns></returns>
         public Vector3 GetPosition(SHexCoordinate coord)
         {
-            Vec2 pos = _converter.Calculator.EuclidianPosition(coord);
-            return new Vector3(pos.X + transform.position.x, transform.position.y, pos.Y + transform.position.z);
+            Vector2 pos = _converter.Calculator.EuclidianPosition(coord);
+            return new Vector3(pos.x + transform.position.x, transform.position.y, pos.y + transform.position.z);
         }
 
         protected override void HandleGenerateAHexes(SHexCoordinate[] coords, out Dictionary<SHexCoordinate, AHex> map)

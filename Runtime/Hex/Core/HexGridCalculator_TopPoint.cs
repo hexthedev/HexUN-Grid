@@ -1,4 +1,5 @@
 ﻿using HexCS.Core;
+using Vector2 = UnityEngine.Vector2;
 
 namespace HexUN.Grid
 {
