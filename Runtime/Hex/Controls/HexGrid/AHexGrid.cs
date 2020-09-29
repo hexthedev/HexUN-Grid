@@ -10,7 +10,7 @@ using Event = HexCS.Core.Event;
 namespace HexUN.Grid
 {
     /// <summary>
-    /// Control for a full hex grid. Once generated, a new HexGrid should be instantiated
+    /// Manages a grid of visual hexes that can be controlled
     /// </summary>
     public abstract class AHexGrid : AVisualFacade
     {
@@ -55,6 +55,15 @@ namespace HexUN.Grid
         }
 
         /// <summary>
+        /// Try to get a hex if the grid contains it. 
+        /// </summary>
+        /// <param name="coord"></param>
+        /// <param name="hex"></param>
+        /// <returns></returns>
+        public bool TryGetHex(SHexCoordinate coord, out AHex hex)
+            => _hexMap.TryGetValue(coord, out hex);
+
+        /// <summary>
         /// Returns AHex for each valid hex coordinate. The returned array will be the same size
         /// as the input array. If no AHex exists for coordinate, sets index to null. Retursn null
         /// if input = null, or hex grid not yet generated
@@ -69,7 +78,7 @@ namespace HexUN.Grid
 
             for(int i = 0; i< ahexes.Length; i++)
             {
-                _hexMap.TryGetValue(hexes[i], out ahexes[i]);
+                TryGetHex(hexes[i], out ahexes[i]);
             }
             return ahexes;
         }
