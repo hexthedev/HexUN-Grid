@@ -43,7 +43,6 @@ namespace HexUN.Grid
                 if (_interactable == value) return;
                 _interactable = value;
                 _onInteractionState.Invoke(_interactable);
-                Debug.Log(value);
                 Render();
             }
         }

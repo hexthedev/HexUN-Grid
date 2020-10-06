@@ -1,5 +1,6 @@
 ﻿using HexUN.Design;
 using HexUN.Input;
+using HexUN.MonoB;
 using UnityEngine;
 
 namespace HexUN.Grid
@@ -38,6 +39,9 @@ namespace HexUN.Grid
         [SerializeField]
         private EHoverableEvent _lastHoverEvent;
 
+        [SerializeField]
+        private MonoDataReliableEvent _onHover;
+
         #region Protected API
         protected override void MonoAwake() {
             base.MonoAwake();
@@ -64,6 +68,8 @@ namespace HexUN.Grid
         public void HandleHoverableEvent(EHoverableEvent hover)
         {
             _lastHoverEvent = hover;
+            AddData(hover);
+            _onHover.Invoke(this);
             Render();
         }
         #endregion

@@ -69,6 +69,10 @@ MonoBehaviour:
   _neutralColor: {fileID: 11400000, guid: 2bf4e827cfdeabe45865516521e1a368, type: 2}
   _highlightedColor: {fileID: 11400000, guid: 37e908907a2fffd45919536d9fc1f5ce, type: 2}
   _lastHoverEvent: 2
+  _onHover:
+    _unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &1641105604247664474
 PrefabInstance:
   m_ObjectHideFlags: 0
